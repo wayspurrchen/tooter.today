@@ -46,6 +46,9 @@ a:active {
 	margin-top: 0;
 	padding-top: 0;
 }
+p.footer {
+	font-size: 12px;
+}
 
 body {
 	font-family: 'Open Sans';

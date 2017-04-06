@@ -6,6 +6,7 @@ from flask import render_template
 app = Flask(__name__)
 
 import random
+from datetime import datetime
 from gather_host_data import kickoff_host_gatherer
 from host_db import get_instances
 from markdown2 import markdown
@@ -162,6 +163,8 @@ emoji = [
 	u'🌃'
 ]
 
+year = datetime.utcnow().year
+
 @app.route("/")
 def home():
 	instance = scored_instances[0]
@@ -171,6 +174,7 @@ def home():
 
 	return render_template(
 		'main.html',
+		year=year,
 		maybe_text=random.choice(maybe_text),
 		again_text=random.choice(again_text),
 		recommended_instance=instance,
@@ -186,6 +190,7 @@ def suggestion(offset=0):
 
 	return render_template(
 		'main.html',
+		year=year,
 		maybe_text=random.choice(maybe_text),
 		again_text=random.choice(again_text),
 		recommended_instance=instance,

@@ -178,7 +178,7 @@ body {
     line-height: 18px;
     font-weight: 400;
     color: #ffffff;
-    padding-bottom: 140px;
+    padding-bottom: 10px;
     text-rendering: optimizelegibility;
     -webkit-font-feature-settings: "kern";
     font-feature-settings: "kern";
@@ -3077,7 +3077,7 @@ button.active i.fa-retweet {
     margin: 0 auto;
     color: #9baec8;
     padding-top: 50px;
-    padding-bottom: 50px
+    padding-bottom: 20px
 }
 .about-body .wrapper.thicc {
     max-width: 700px
