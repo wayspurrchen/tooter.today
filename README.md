@@ -1,5 +1,7 @@
 # tooter.today
 
+![](http://i.imgur.com/y5uCm4O.png)
+
 A dead-simple site that provides a scoring of Mastodon instances, scraped from instances.mastodon.xyz, and pulls some additional contextual information from each instance.
 
 I hereby disclaim that the code is crappy for I was scrappy.
