@@ -11,7 +11,7 @@
 
 	<h3 class="suggestion"><a href="{{recommended_instance.domain}}">{{recommended_instance.domain}}</a></h3>
 
-	<p class="suggestion-note">It's got <b>{{recommended_instance.user_count}}</b> users, an uptime of {{recommended_instance.uptime}}%, and registrations are open! They've also made {% if recommended_instance.status_count %}{{recommended_instance.status_count}}{% else %}0{% endif %} posts and are connected to {% if recommended_instance.connected_instance_count %}{{recommended_instance.connected_instance_count}}{% else %}0{% endif %} other instances.</p>
+	<p class="suggestion-note">It's got <b>{{recommended_instance.user_count}}</b> users, an uptime of {{recommended_instance.uptime}}%, and registrations are open! They've also made {% if recommended_instance.status_count %}{{recommended_instance.status_count}}{% else %}0{% endif %} posts and are connected to {% if recommended_instance.connected_instance_count %}{{recommended_instance.connected_instance_count}}{% else %}0{% endif %} other instances.<br/><small>(last checked: {{last_updated}})</small></p>
 
 	{% if recommended_instance.long_about %}
 		<h3 class="suggestion-about-title">About <a href="{{recommended_instance.domain}}"><b>{{recommended_instance.domain}}</b></a> (from their <a href="{{recommended_instance.domain}}/about/more">about page</a>)</h3>

@@ -178,6 +178,9 @@ def home():
 	return render_template(
 		'main.html',
 		year=year,
+		last_updated=datetime.fromtimestamp(
+			int(instance['last_updated'])
+		).strftime('%c'),
 		maybe_text=random.choice(maybe_text),
 		again_text=random.choice(again_text),
 		recommended_instance=instance,
@@ -194,6 +197,9 @@ def suggestion(offset=0):
 	return render_template(
 		'main.html',
 		year=year,
+		last_updated=datetime.fromtimestamp(
+			int(instance['last_updated'])
+		).strftime('%c'),
 		maybe_text=random.choice(maybe_text),
 		again_text=random.choice(again_text),
 		recommended_instance=instance,
