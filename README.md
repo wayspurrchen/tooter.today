@@ -17,3 +17,6 @@ I hereby disclaim that the code is crappy for I was scrappy.
 - Exposing the scoring algorithm as an API endpoint, allow people to plug in their own values for the formula
 - Add timeline preview
 - Add a favicon
+- Add some social graph tags and such
+- Fix relative links from about pages (or disable links entirely(?))
+- Better mobile optimization

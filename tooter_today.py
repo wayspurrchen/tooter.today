@@ -86,10 +86,14 @@ def score_instances():
 		if instance['ipv6_support']:
 			score += 1
 
-		# print instance['domain']
+		print '============='
+		print instance['domain']
 
-		uptime_modifier = pow(2, instance['uptime'] * 0.01)
-		score *= uptime_modifier
+		print 'uptime: ' + str(instance['uptime'])
+		uptime_modifier = (pow(2, instance['uptime'] * 0.066) * -1) + 100
+		print 'uptime modifier: ' + str(uptime_modifier)
+		score /= uptime_modifier
+		print 'score after uptime_modifier: ' + str(score)
 
 		# parabolic curve so that instances with hella low
 		# users aren't as likely to be suggested
@@ -98,11 +102,10 @@ def score_instances():
 			pow(instance['user_count'] - 60.000000, 2.0) / 80.0
 		) + 1
 
-		# print '============='
-		# print 'user count: ' + str(instance['user_count'])
-		# print 'user count modifier: ' + str(user_count_modifier)
-		# print 'core score: ' + str(score)
-		# print 'final score w/ user_count_modifier: ' + str(score / user_count_modifier)
+		print 'user count: ' + str(instance['user_count'])
+		print 'user count modifier: ' + str(user_count_modifier)
+		print 'core score: ' + str(score)
+		print 'final score: ' + str(score / user_count_modifier)
 
 		instance['final_score'] = float(score / user_count_modifier)
 		# print 'final score'
