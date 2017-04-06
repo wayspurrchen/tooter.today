@@ -2,8 +2,13 @@ from peewee import *
 from playhouse.sqlite_ext import SqliteExtDatabase
 from playhouse.shortcuts import model_to_dict
 import datetime
+import os
 
-db = SqliteExtDatabase('tooters.db')
+PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+DATABASE = os.path.join(PROJECT_ROOT, 'tmp', 'tooters.db')
+print DATABASE
+db = SqliteExtDatabase(DATABASE)
 
 class BaseModel(Model):
 	class Meta:
