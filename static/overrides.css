@@ -1,0 +1,52 @@
+.suggestion-container {
+	background: rgba(25,27,34,0.5);
+	padding: 14px;
+	border-radius: 4px;
+	box-shadow: 0 0 15px rgba(0,0,0,0.4);
+	margin-bottom: 20px;
+}
+.suggestion-title {
+	text-align: center;
+}
+.about-body .suggestion {
+	text-align: center;
+	font-size: 40px;
+	line-height: 40px;
+	padding: 5px;
+	background-color: #b8cde4;
+}
+.about-body .suggestion.again {
+	margin-top: 20px;
+}
+.suggestion-note {
+	text-align: center;
+}
+
+.suggestion-about-title {
+	text-align: center;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #b8cde4;
+}
+.suggestion a:link,
+.suggestion a:visited,
+.suggestion a:hover,
+.suggestion a:active {
+	color: #000;
+	text-decoration: none;
+}
+.suggestion-about {
+	border: 1px solid #b8cde4;
+	padding: 10px;
+}
+.about-body h1 {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+body {
+	font-family: 'Open Sans';
+}

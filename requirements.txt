@@ -1,0 +1,8 @@
+Flask==0.12.1
+Mastodon.py==1.0.5
+lxml==3.7.3
+cssselect==1.0.1
+peewee==2.9.1
+markdown2==2.3.3
+markdownify=0.4.0
+requests[security]
