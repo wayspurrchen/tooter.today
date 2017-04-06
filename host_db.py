@@ -6,8 +6,7 @@ import os
 
 PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-DATABASE = os.path.join(PROJECT_ROOT, 'tmp', 'tooters.db')
-print DATABASE
+DATABASE = os.path.join(PROJECT_ROOT, 'tooters.db')
 db = SqliteExtDatabase(DATABASE)
 
 class BaseModel(Model):
