@@ -193,5 +193,7 @@ def suggestion(offset=0):
 		emoji=random.choice(emoji)
 	)
 
+kickoff_host_gatherer()
+
 if __name__ == "__main__":
 	app.run()
