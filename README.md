@@ -16,3 +16,4 @@ I hereby disclaim that the code is crappy for I was scrappy.
 - Directly visit instance for data on domain, user count, etc.
 - Exposing the scoring algorithm as an API endpoint, allow people to plug in their own values for the formula
 - Add timeline preview
+- Add a favicon
