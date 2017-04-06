@@ -190,16 +190,22 @@ def home():
 
 @app.route("/suggestions/<offset>")
 def suggestion(offset=0):
-	instance = scored_instances[int(offset)]
-	if instance['long_about']:
-		instance['long_about'] = markdown(instance['long_about'])
+	index = int(offset)
+	last_updated = None
+	if 0 <= index < len(scored_instances):
+		instance = scored_instances[int(offset)]
+		if instance['long_about']:
+			instance['long_about'] = markdown(instance['long_about'])
+		last_updated = datetime.fromtimestamp(
+			int(instance['last_updated'])
+		).strftime('%c')
+	else:
+		instance = None
 
 	return render_template(
 		'main.html',
 		year=year,
-		last_updated=datetime.fromtimestamp(
-			int(instance['last_updated'])
-		).strftime('%c'),
+		last_updated=last_updated,
 		maybe_text=random.choice(maybe_text),
 		again_text=random.choice(again_text),
 		recommended_instance=instance,
