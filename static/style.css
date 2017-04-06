@@ -171,7 +171,7 @@ table {
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background: #282c37 url(/assets/background-photo-2f83870127c58e58d887872e980141a24edb64cc00a17ecb20e4d4e6a200958a.jpg);
+    background: #282c37;
     background-size: cover;
     background-attachment: fixed;
     font-size: 13px;
