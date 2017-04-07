@@ -1,3 +1,4 @@
+import json
 from lxml import html, etree
 import requests
 import threading
@@ -16,30 +17,24 @@ def set_interval(func, sec):
     return t
 
 def gather_data_from_instances_xyz():
-	page = requests.get('https://instances.mastodon.xyz/')
-	tree = html.fromstring(page.content)
-	rows = tree.cssselect('table.table tbody tr')
-	props = []
+	instances_data = requests.get('https://instances.mastodon.xyz/instances.json')
+	instances = instances_data.json()
 
-	for row in rows:
+	for instance in instances:
 		instance_data = {
-			'domain': row.cssselect('th a')[0].get('href'),
-			'user_count': row.cssselect('td')[1].text.strip(),
-			'uptime': float(row.cssselect('td')[3].text.strip()[0:-1])
+			'domain': 'https://' + instance['name'],
+			'user_count': instance['users'],
+			'uptime': float(instance['uptime']),
+			'online': instance['up'],
+			'ipv6_support': instance['ipv6']
 		}
 
-		online = row.cssselect('td')[0].text.strip()
-		instance_data['online'] = True if online.lower() == 'up' else False
-		registration_open = row.cssselect('td')[2].text.strip()
-		instance_data['registration_open'] = True if registration_open.lower() == 'yes' else False
-		ipv6_support = row.cssselect('td')[5].text.strip()
-		instance_data['ipv6_support'] = True if ipv6_support.lower == 'yes' else False
-
-		potential_https = row.cssselect('td')[4].cssselect('a')
-		if len(potential_https) > 0:
-			instance_data['https_score'] = potential_https[0].text.strip()
+		if 'openRegistrations' in instance:
+			instance_data['registration_open'] = True
 		else:
-			instance_data['https_score'] = ''
+			instance_data['registration_open'] = False
+
+		instance_data['https_score'] = instance['https_rank']
 
 		instance_detail_page = None
 		if instance_data['online']:
